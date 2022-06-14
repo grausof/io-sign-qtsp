@@ -75,11 +75,11 @@ public class PadesService {
             return this.fileTBS;
 
         } catch (IOException e) {
-            throw new QtspException("QTSP error: I can't read the files");
+            throw new QtspException("QTSP error: I can't read the files", e.getCause());
         } catch (URISyntaxException e) {
-            throw new QtspException("QTSP error: URL not found");
+            throw new QtspException("QTSP error: URL not found", e.getCause());
         } catch (InvalidKeyException e) {
-            throw new QtspException("QTSP error: Invalid Key");
+            throw new QtspException("QTSP error: Invalid Key", e.getCause());
         }
 
     }
