@@ -31,7 +31,7 @@ public class PadesService {
     private QTSPService QTSPService;
 
     @Autowired
-    public PadesService() {
+    public PadesService() throws InvalidKeyException, URISyntaxException, IOException {
 
         this.QTSPService = new QTSPService();
     }
@@ -75,11 +75,11 @@ public class PadesService {
             return this.fileTBS;
 
         } catch (IOException e) {
-            throw new QtspException("QTSP error: I can't read the files", e);
+            throw new QtspException("QTSP error: I can't read the files");
         } catch (URISyntaxException e) {
-            throw new QtspException("QTSP error: URL not found", e.getCause());
+            throw new QtspException("QTSP error: URL not found");
         } catch (InvalidKeyException e) {
-            throw new QtspException("QTSP error: Invalid Key", e.getCause());
+            throw new QtspException("QTSP error: Invalid Key");
         }
 
     }

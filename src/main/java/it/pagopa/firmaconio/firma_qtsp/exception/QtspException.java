@@ -9,9 +9,4 @@ public class QtspException extends RuntimeException {
     public QtspException(String message, Throwable cause) {
         super(message, cause);
     }
-
-    public QtspException(String message, Exception originalException) {
-        super(message);
-        originalException.printStackTrace();
-    }
 }

@@ -32,8 +32,7 @@ public class RestExceptionhandler extends ResponseEntityExceptionHandler {
             UploadedFileException ex) {
         ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST);
         apiError.setMessage(ex.getMessage());
-        if (ex.getCause()!=null)
-            apiError.setDebugMessage(ex.getCause().toString());
+        apiError.setDebugMessage(ex.getCause().getMessage());
         return buildResponseEntity(apiError);
     }
 
@@ -42,8 +41,7 @@ public class RestExceptionhandler extends ResponseEntityExceptionHandler {
             FileStorageException ex) {
         ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR);
         apiError.setMessage(ex.getMessage());
-        if (ex.getCause()!=null)
-            apiError.setDebugMessage(ex.getCause().toString());
+        apiError.setDebugMessage(ex.getCause().getMessage());
         return buildResponseEntity(apiError);
     }
 
@@ -52,8 +50,7 @@ public class RestExceptionhandler extends ResponseEntityExceptionHandler {
             QtspException ex) {
         ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST);
         apiError.setMessage(ex.getMessage());
-        if (ex.getCause()!=null)
-            apiError.setDebugMessage(ex.getCause().toString());
+        apiError.setDebugMessage(ex.getCause().getMessage());
         return buildResponseEntity(apiError);
     }
 
@@ -62,8 +59,7 @@ public class RestExceptionhandler extends ResponseEntityExceptionHandler {
             NullPointerException ex) {
         ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST);
         apiError.setMessage(ex.getMessage());
-        if (ex.getCause()!=null)
-            apiError.setDebugMessage(ex.getCause().toString());
+        apiError.setDebugMessage(ex.getCause().getMessage());
         return buildResponseEntity(apiError);
     }
 
